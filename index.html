@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Autumn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content" id="mainContent">
+            <h1>Dear Autumn</h1>
+            <div id="readyButton">
+                <button id="startMessages" class="btn">Are you ready?</button>
+            </div>
+            <div id="typingMessages"></div>
+            <div class="next-question" style="display: none;">
+            <p class="message">I have something special to ask you...</p>
+            <button id="showQuestion" class="btn">Find out what</button>
+            </div>
+        </div>
+        <div class="question-container" id="questionContainer" style="display: none;">
+            <div class="hearts"></div>
+            <h2>Would you like to be my girlfriend?</h2>
+            <div class="buttons">
+                <button id="yesBtn" class="btn yes-btn">Yes</button>
+                <button id="noBtn" class="btn no-btn">No</button>
+            </div>
+        </div>
+        <div class="success-message" id="successMessage" style="display: none;">
+            <h2>❤️ Thank you! ❤️</h2>
+            <p>Taking you to our story...</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #f7d794;
+    --background-color: #fff5f5;
+    --text-color: #2d3436;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ffb6b6, #ffd3d3, #ffe9e9, #fff5f5);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    margin: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.message {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.typing-message {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin: 10px 0;
+    min-height: 1.5em;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.message-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.typing-message.fade-out {
+    opacity: 0;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#showQuestion {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.yes-btn {
+    background-color: #55efc4;
+    color: white;
+}
+
+.no-btn {
+    background-color: #fab1a0;
+    color: white;
+}
+
+.question-container, .success-message {
+    margin-top: 2rem;
+}
+
+.heart, .sparkle {
+    position: fixed;
+    pointer-events: none;
+    animation: fadeOut 1s linear forwards;
+    z-index: 9999;
+    font-size: 20px;
+}
+
+.petal {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    font-size: 24px;
+    animation: falling 15s ease-in infinite;
+}
+
+#startMessages {
+    background-color: var(--primary-color);
+    color: var(--text-color)
+}
+
+@keyframes falling {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}
+
+@keyframes sparkleAnimation {
+    0% { transform: scale(0) rotate(0deg) translateY(0); opacity: 0; }
+    20% { opacity: 1; }
+    100% { 
+        transform: scale(1.5) rotate(360deg) translateY(var(--travel-distance)); 
+        opacity: 0; 
+    }
+}
+
+@keyframes burstAnimation {
+    0% { transform: scale(0) rotate(0deg); opacity: 0; }
+    20% { transform: scale(2) rotate(180deg); opacity: 1; }
+    100% { transform: scale(3) rotate(360deg); opacity: 0; }
+}
+
+@keyframes starAnimation {
+    0% { transform: scale(0) translateX(0) translateY(0); opacity: 0; }
+    30% { opacity: 1; }
+    100% { 
+        transform: scale(1.2) 
+        translateX(var(--travel-x)) 
+        translateY(var(--travel-y)); 
+        opacity: 0; 
+    }
+}
+
+.sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.sparkle-burst {
+    animation: burstAnimation 1.2s ease-out forwards;
+    color: gold;
+    font-size: 30px;
+}
+
+.sparkle-star {
+    animation: starAnimation 1.5s ease-out forwards;
+    color: white;
+    text-shadow: 0 0 5px gold, 0 0 10px gold;
+    font-size: 20px;
+}
+
+.sparkle-spiral {
+    animation: sparkleAnimation 2s ease-out forwards;
+    color: #FFD700;
+    font-size: 25px;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.3); }
+}
+
+@keyframes neonPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.8; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes neonRing {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes glowingOrb {
+    0% { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; opacity: 1; }
+    50% { box-shadow: 0 0 20px #fff, 0 0 40px #ff00ff, 0 0 60px #00ffff; opacity: 0.8; }
+    100% { box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; opacity: 1; }
+}
+
+.neon-effect {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.neon-orb {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    animation: neonPulse 1.5s ease-out forwards, glowingOrb 0.5s ease-in-out infinite;
+}
+
+.neon-ring {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: neonRing 1s ease-out forwards, colorShift 2s linear infinite;
+}
+
+.neon-particle {
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: starAnimation 2s ease-out forwards;
+}
+
+.date-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.troll-message {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

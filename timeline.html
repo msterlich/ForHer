@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Timeline</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .timeline-item {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content {
+            color: var(--text-color);
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item::before {
+            content: '❤️';
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+        }
+        
+        @media (max-width: 600px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                margin-left: 60px;
+            }
+            
+            .timeline-item::before {
+                left: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Story</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">October 5, 2024</div>
+                <div class="timeline-content">
+                    First conversation (I will never forget my Pickup Line)
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">November 7, 2024</div>
+                <div class="timeline-content">
+                    YOU ACTUALLY SAID YES?!
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">Coming Soon...</div>
+                <div class="timeline-content">
+                    More beautiful moments to be added to our story ;)
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
