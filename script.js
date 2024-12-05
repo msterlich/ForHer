@@ -76,6 +76,19 @@ document.addEventListener('DOMContentLoaded', () => {
         displayMessages();
     });
 
+    // Function to update the timeline date
+    function updateTimelineDate() {
+        const dynamicDateElement = document.getElementById('dynamicTimelineDate');
+        if (dynamicDateElement) {
+            const currentDate = new Date();
+            const options = { month: 'long', day: 'numeric', year: 'numeric' };
+            dynamicDateElement.textContent = currentDate.toLocaleDateString('en-US', options);
+        }
+    }
+
+    // Call the function to update the date
+    updateTimelineDate();
+
     // Create rose petals
     function createPetal() {
         const petal = document.createElement('div');
