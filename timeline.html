@@ -79,7 +79,14 @@
             </div>
             
             <div class="timeline-item">
-                <div id="dynamicTimelineDate" class="timeline-date">November 7, 2024</div>
+                <div id="dynamicTimelineDate" class="timeline-date"></div>
+                <script>
+                    document.getElementById('dynamicTimelineDate').textContent = new Date().toLocaleDateString('en-US', { 
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                    });
+                </script>
                 <div class="timeline-content">
                     YOU ACTUALLY SAID YES?!
                 </div>
