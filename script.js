@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle both mouse movement and touch for hearts
     const handleHeartCreation = (x, y) => {
-        if (Math.random() < 0.9) { // Increased from 0.3 to 0.9 to spawn more hearts
+        if (Math.random() < 1) { // Increased from 0.3 to 1 to spawn more hearts
             createHeart(x, y);
         }
     };
