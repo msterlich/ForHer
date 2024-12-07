@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Create heart burst
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 200; i++) {
             setTimeout(() => {
                 const heart = document.createElement('div');
                 heart.innerHTML = '❤️';
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 heart.style.left = (e.clientX + Math.cos(angle) * distance) + 'px';
                 heart.style.top = (e.clientY + Math.sin(angle) * distance) + 'px';
                 document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 1500);
+                setTimeout(() => heart.remove(), 15000);
             }, i * 100);
         }
     });
