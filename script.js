@@ -213,12 +213,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         setTimeout(() => {
             heart.remove();
-        }, 10000); // 10 sec
+        }, 20000); // 20 sec
     }
 
     // Handle both mouse movement and touch for hearts
     const handleHeartCreation = (x, y) => {
-        if (Math.random() < 1) { // Increased from 0.3 to 1 to spawn more hearts
+        if (Math.random() < 10) { // Increased from 0.3 to 10 to spawn more hearts
             createHeart(x, y);
         }
     };
